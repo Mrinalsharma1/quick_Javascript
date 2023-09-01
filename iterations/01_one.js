@@ -39,3 +39,6 @@ for (const key in myObj) {
 
 //for in will not applicable on map
 
+
+
+
