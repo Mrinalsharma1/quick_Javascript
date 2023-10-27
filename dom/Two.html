@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Chai or Code</p>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    // add elements
+    // normal way
+    function additem(langName){
+        const li=document.createElement('li');
+        li.innerHTML=`${langName}`;
+        document.querySelector('.language').appendChild(li)
+    }
+    additem('python')
+
+    // optimise way
+    function optimise(item){
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(item));
+        document.querySelector('.language').appendChild(li);
+    }
+    optimise('node')
+
+    // edit 1way
+    const secLang=document.querySelector('li:nth-child(2)');
+    secLang.innerHTML="hello"
+
+    // edit 2way
+    const newli=document.createElement("li");
+    newli.textContent="react";
+    secLang.replaceWith(newli)
+
+    // edit 3way
+    const seclng=document.querySelector('li:nth-child(2)')
+    seclng.outerHTML='<li>something</li>'
+
+    // remove
+    const firstLang=document.querySelector('li:first-child')
+    firstLang.remove()
+
+</script>
+</html>

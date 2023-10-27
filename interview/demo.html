@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @media only screen and (min-width:600px) {
+            .check{
+                background-color: yellow;
+                width: 100%;
+                height: 50vh;
+            }
+        }
+        @media only screen and (min-width:900px){
+            .check{
+                background-color: red;
+                width: 100%;
+                height: 50vh;
+            }
+        }
+        .parent{
+            height: 200px;
+            width: 95%;
+            position: relative;
+            border: 1px solid green;
+        }
+        .parent p{
+            top: 50%;
+            position: absolute;
+            left: 50%;
+            margin: 0;
+        }
+        
+    </style>
+</head>
+<body class="check">
+    <div class="parent">
+        <p id="item"></p>
+    </div>
+   
+
+    
+
+    <script>
+        const product={
+            name:'mobile',
+            price:6700,
+            rating:4
+        }
+
+        let domItem=document.getElementById('item');
+        for (const key in product) {
+            let text=(`key is ${key} -> ${product[key]}`);
+            domItem.innerText+=text+'\n';
+        }
+        // domItem.innerHTML="hello world!"
+    </script>
+    
+</body>
+</html>
+
